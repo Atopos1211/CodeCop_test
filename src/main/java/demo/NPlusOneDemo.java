@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NPlusOneDemo {
-
+    // Trigger a new CodeCop review task.
     private final UserMapper userMapper;
 
     public NPlusOneDemo(UserMapper userMapper) {
