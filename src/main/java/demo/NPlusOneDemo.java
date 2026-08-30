@@ -5,10 +5,6 @@ import java.util.List;
 
 public class NPlusOneDemo {
     // Trigger a new CodeCop review task.
-    //test1
-    //test2
-    //test3 LLM
-    //test4 LLM 200
     private final UserMapper userMapper;
 
     public NPlusOneDemo(UserMapper userMapper) {
