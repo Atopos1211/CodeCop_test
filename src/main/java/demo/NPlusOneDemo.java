@@ -2,6 +2,7 @@ package demo;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class NPlusOneDemo {
     // Trigger a new CodeCop review task.
@@ -13,15 +14,20 @@ public class NPlusOneDemo {
     }
 
     public List<User> loadUsers(List<Long> userIds) {
-        List<User> users = new ArrayList<>();
+        List<User> users = new ArrayList<>(userIds.size());
+        if (userIds.isEmpty()) {
+            return users;
+        }
+
+        Map<Long, User> usersById = userMapper.selectByIds(userIds);
         for (Long id : userIds) {
-            users.add(userMapper.selectById(id));
+            users.add(usersById.get(id));
         }
         return users;
     }
 
     public interface UserMapper {
-        User selectById(Long id);
+        Map<Long, User> selectByIds(List<Long> ids);
     }
 
     public static class User {
